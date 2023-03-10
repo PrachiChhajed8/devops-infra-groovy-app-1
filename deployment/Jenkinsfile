@@ -32,6 +32,16 @@ stage('Integration Test') {
  }
  
  }
+ 
+stage('Docker Build') {
+ if (isUnix()){
+ 
+ sh "'${mvnHome}/bin/mvn' spring-boot:build-image"
+ } else {
+ bat(/"${mvnHome}\bin\mvn" spring-boot:build-image/)
+ }
+ 
+ }
 
 
 }

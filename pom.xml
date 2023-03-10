@@ -22,9 +22,9 @@
 	
 
 <scm>
-<connection>scm:git:git@github.com:krishnamurthypradeep/devops-infra-groovy-app.git</connection>
-<developerConnection>scm:git:git@github.com:krishnamurthypradeep/devops-infra-groovy-app.git</developerConnection>
-<url>git@github.com:krishnamurthypradeep/devops-infra-groovy-app.git</url>
+<connection>scm:git:git@github.com:PrachiChhajed8/devops-infra-groovy-app-1.git</connection>
+<developerConnection>scm:git:git@github.com:PrachiChhajed8/devops-infra-groovy-app-1.git</developerConnection>
+<url>git@github.com:PrachiChhajed8/devops-infra-groovy-app-1.git</url>
 <tag>v0.0.2</tag>
 </scm>
 

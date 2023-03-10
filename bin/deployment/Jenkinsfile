@@ -2,7 +2,7 @@ node {
 def mvnHome
 
 stage('Prepare') {
-	git url: 'https://github.com/PrachiChhajed8/devops-infra-groovy-app-1.git', branch: 'master'
+	git url: 'https://github.com/PrachiChhajed8/devops-infra-groovy-app.git', branch: 'develop'
 	
 	mvnHome = tool 'mvn'
 }

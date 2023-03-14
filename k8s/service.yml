@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     app: app-products-infra
-  type: NodePort
+  type: ClusterIP
   ports:
-  - port: 8888
-    nodePort: 30164
-    targetPort: 8888
+  - protocol: TCP
+    port: 9999
+    targetPort: 9999

@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: app-products-inra
-  replicas: 6
+  replicas: 2
   strategy:
     type: RollingUpdate
 

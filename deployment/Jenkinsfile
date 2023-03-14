@@ -58,7 +58,7 @@ stage('Load Docker Image') {
  
  sh "minikube image load prachi8/app-products-infra"
  } else {
- bat(minikube image load prachi8/app-products-infra)
+ bat(/minikube image load prachi8/app-products-infra/)
  }
  
  }
@@ -68,7 +68,7 @@ stage('Kubernetes Pod') {
  
  sh "kubectl apply -f k8s/deployment.yml"
  } else {
- bat(kubectl apply -f k8s/deployment.yml)
+ bat("kubectl apply -f k8s/deployment.yml")
  }
  
  }
@@ -78,7 +78,7 @@ stage('Kubernetes Service') {
  
  sh "kubectl apply -f k8s/service.yml"
  } else {
- bat(kubectl apply -f k8s/service.yml)
+ bat("kubectl apply -f k8s/service.yml")
  }
  
  }

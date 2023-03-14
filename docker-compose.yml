@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+   build: .
+   image: prachi8/app-products-infra
+   volumes:
+    - app-data:/var/bin
+   ports:
+    - 4000:8888
+    
+volumes:
+ app-data:	 	 

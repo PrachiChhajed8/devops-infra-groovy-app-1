@@ -33,15 +33,54 @@ stage('Integration Test') {
  
  }
  
-stage('Docker Build') {
+//stage('Docker Build') {
+//if (isUnix()){
+ 
+// sh "'${mvnHome}/bin/mvn' spring-boot:build-image"
+// } else {
+// bat(/"${mvnHome}\bin\mvn" spring-boot:build-image/)
+// }
+ 
+ //}
+
+//stage('Docker Build') {
+// if (isUnix()){
+ 
+// sh "'${mvnHome}/bin/mvn' docker-compose up"
+// } else {
+// bat(/"${mvnHome}\bin\mvn" docker-compose up /)
+// }
+ 
+// }
+
+stage('Load Docker Image') {
  if (isUnix()){
  
- sh "'${mvnHome}/bin/mvn' spring-boot:build-image"
+ sh "minikube image load prachi8/app-products-infra"
  } else {
- bat(/"${mvnHome}\bin\mvn" spring-boot:build-image/)
+ bat(minikube image load prachi8/app-products-infra)
+ }
+ 
+ }
+ 
+stage('Kubernetes Pod') {
+ if (isUnix()){
+ 
+ sh "kubectl apply -f k8s/deployment.yml"
+ } else {
+ bat(kubectl apply -f k8s/deployment.yml)
  }
  
  }
 
+stage('Kubernetes Service') {
+ if (isUnix()){
+ 
+ sh "kubectl apply -f k8s/service.yml"
+ } else {
+ bat(kubectl apply -f k8s/service.yml)
+ }
+ 
+ }
 
 }

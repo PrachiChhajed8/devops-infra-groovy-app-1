@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-products-infra
+  labels:
+    app: app-products-inra
+spec:
+  
+  selector:
+    matchLabels:
+      app: app-products-inra
+  replicas: 6
+  strategy:
+    type: RollingUpdate
+
+  template:
+    metadata:
+      labels:
+        app: app-products-inra
+    spec:
+      containers:
+      - name: app-products-inra
+        image: prachi8/app-products-infra
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8888

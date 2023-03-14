@@ -22,9 +22,5 @@ spec:
       - name: app-products-inra
         image: prachi8/app-products-infra
         imagePullPolicy: IfNotPresent
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8888
